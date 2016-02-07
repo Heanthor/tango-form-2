@@ -1,7 +1,10 @@
 <?php
 
 include('ipn/ipnlistener.php');
-include("fileEditor.php");
+require_once("fileEditor.php");
+require_once("dbLogin.php");
+require_once("sqlconnector.php");
+
 
 ini_set('log_errors', true);
 ini_set('error_log', dirname(__FILE__).'/ipn_errors.log');
@@ -9,7 +12,13 @@ ini_set('error_log', dirname(__FILE__).'/ipn_errors.log');
 $listener = new IpnListener();
 $listener->use_sandbox = true;
 
-$fe = new FileEditor("log.txt");
+$fe2 = new FileEditor('login-info.txt');
+$credentials = $fe2->readFile();
+
+$cred = new Credentials("terrapintango.cgpkve9uh8yp.us-east-1.rds.amazonaws.com", $credentials[0], $credentials[1], "tangodb", 3306);
+$connection = new SQLConnector($cred);
+$connection->connect();
+    
 try {
     $verified = $listener->processIpn();
 } catch (Exception $e) {
@@ -18,7 +27,7 @@ try {
 }
 
 if ($verified) {
-    $fe->writeToFile($listener->getTextReport());
+    $connection->insert("insert into confirmation values (16, 1, 1)");
 } else {
     // IPN response was "INVALID"
 }
