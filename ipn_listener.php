@@ -13,6 +13,7 @@ $listener = new IpnListener();
 $listener->use_sandbox = true;
 
 $fe2 = new FileEditor('login-info.txt');
+$fe1 = new FileEditor("log.txt");
 $credentials = $fe2->readFile();
 
 $cred = new Credentials("terrapintango.cgpkve9uh8yp.us-east-1.rds.amazonaws.com", $credentials[0], $credentials[1], "tangodb", 3306);
@@ -28,8 +29,9 @@ try {
 
 if ($verified) {
     $connection->insert("insert into confirmation values (5, 3, 5)");
+    $fe1->writeToFile("Success");
 } else {
-    // IPN response was "INVALID"
+    $fe1->writeToFile("Failure");
 }
 
 ?>

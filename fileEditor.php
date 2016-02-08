@@ -27,5 +27,9 @@ class FileEditor {
 
         return $this->credentials;
     }
+    
+    function writeToFile($line) {
+        return file_put_contents($this->filename, $line, FILE_APPEND);
+    }
 }
 ?>
