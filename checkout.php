@@ -32,8 +32,8 @@ Released   : 20130731
     $connection = new SQLConnector($cred);
     $connection->connect();
 
-    $query = "INSERT INTO `classes` (`registerid`, `classes`, `price`,  `referencenum`, `confirmation`)
-            VALUES ('$id', '$selected_classes', '$price', '1234', '50');";
+    $query = "INSERT INTO `classes` (`registerid`, `classes`, `price`)
+            VALUES ('$id', '$selected_classes', '$price');";
 
     try {
         $connection->insert($query);    

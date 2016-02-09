@@ -9,7 +9,7 @@
     $fe = new FileEditor("login-info.txt");
     $credentials = $fe->readFile();
 
-    $class_limit = 20; // 20 leaders, 20 followers
+    $class_limit = 2; // 20 leaders, 20 followers
     $fri_milonga_limit = 150;
     $sat_milonga_limit = 300;
     $sun_milonga_limit = 100;
@@ -28,8 +28,9 @@
     $connection->connect();
 
     $class_info = $connection->retrieve("SELECT c.classes, r.dancertype, r.partnerfname
-                                        FROM records r, classes c
-                                        WHERE r.registerid = c.registerid");
+                                        FROM records r, classes c, confirmation f
+                                        WHERE r.registerid = c.registerid and r.registerid = f.registerid and
+                                        f.payment_status = 'Completed';");
     //print_r($class_info);
     $master_class_list = new Defaultdict(array("LEADER" => 0, "FOLLOWER" => 0)); // <3 from python
 
