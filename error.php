@@ -76,7 +76,7 @@ echo '<h1>'.$title.'</h1>
 ?>
     <div></div>
     <div class="bottom_divider" align="center">
-        <p><br>You have encountered an error. We appologize for the inconvinience.<br>Please email us at <a href="mailto:Terrapin.Tango.Festival@gmail.com?Subject=Site%20Error <?php echo $codes[$status][0]?>">terrapin.tango.festival@gmail.com</a> and tell us as much as you can about what led you to this page, what internet browser you used, and any other information related to your experience so we can attempt to remedy the situation as quickly as possible.</p>
+        <p><br>You have encountered an error. We appologize for the inconvinience.<br>Please email us at <a href="mailto:Terrapin.Tango.Festival@gmail.com?Subject=Site%20Error <?php echo $title." ".$message?>">terrapin.tango.festival@gmail.com</a> and tell us as much as you can about what led you to this page, what internet browser you used, and any other information related to your experience so we can attempt to remedy the situation as quickly as possible.</p>
     </div>
     
 
