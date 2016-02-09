@@ -5,8 +5,6 @@ require_once("fileEditor.php");
 require_once("sqlconnector.php");
 require_once("dbLogin.php");
 
-session_start();
-
 ini_set('log_errors', true);
 ini_set('error_log', dirname(__FILE__).'/ipn_errors.log');
 
@@ -32,10 +30,10 @@ try {
     exit(0);
 }
 
-if (isset($_SESSION['submission_id'])) {
-    $id = $_SESSION['submission_id'];
+if (isset($_GET['submission_id'])) {
+    $id = $_GET['submission_id'];
 } else {
-    $id = 1; // debug
+    $id = -1; // debug
 }
 
 if ($verified) {
