@@ -9,7 +9,7 @@
     $fe = new FileEditor("login-info.txt");
     $credentials = $fe->readFile();
 
-    $class_limit = 2; // 20 leaders, 20 followers
+    $class_limit = 20; // 20 leaders, 20 followers
     $fri_milonga_limit = 150;
     $sat_milonga_limit = 300;
     $sun_milonga_limit = 100;
