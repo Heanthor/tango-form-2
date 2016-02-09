@@ -41,7 +41,8 @@ if (isset($_SESSION['submission_id'])) {
 if ($verified) {
     $post_data = $listener->get_post_data();
     $transaction_id = $post_data['txn_id'];
-    $payment_gross = $post_data['mc_gross'];
+    //$payment_gross = $post_data['mc_gross'];
+    $payment_gross = 4.56;
     $status = $post_data['payment_status'];
     $connection->insert("insert into confirmation (registerid, transaction_id, total, payment_status) values($id, $transaction_id, $payment_gross, '$status');");
 } else {
