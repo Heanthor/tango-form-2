@@ -65,7 +65,7 @@ Released   : 20130731
 </head>
 <body>
 <div id="logo" class="container">
-    <h1><a href="#">7th annual <span>Terrapin Tango Festival</span></a></h1>
+    <h1><a href="index.html">7th annual <span>Terrapin Tango Festival</span></a></h1>
     <p>The University of Maryland, College Park, April 15-17, 2016</p>
 </div>
 <?php // Insert headers here
