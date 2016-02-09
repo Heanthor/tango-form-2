@@ -246,6 +246,10 @@ class IpnListener {
         return $r;
     }
     
+	public function get_transaction_id() {
+		return $this->post_data['txn_id'];
+	}
+	
     /**
      *  Process IPN
      *
