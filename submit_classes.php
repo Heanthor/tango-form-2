@@ -21,7 +21,12 @@
     $query = "INSERT INTO `classes` (`registerid`, `classes`, `price`,  `referencenum`, `confirmation`)
             VALUES ('$id', '$selected_classes', '$price', '1234', '50');";
 
-    $connection->insert($query);
+    try {
+        $connection->insert($query);    
+    } catch (Exception $e) {
+        $_SESSION['sql_error'] = $e->getMessage();
+        header("Location: error.php");
+    }
 
     print_r( $selected_classes);
     echo "<br />";

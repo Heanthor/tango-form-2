@@ -39,7 +39,12 @@
         ('$first_name', '$last_name', '$email', '$phone', '$ticket_type',
         '$type', $partner_fname, $partner_lname, NULL);";
 
-    $connection->insert($query);
+    try {
+        $connection->insert($query);    
+    } catch (Exception $e) {
+        $_SESSION['sql_error'] = $e->getMessage();
+        header("Location: error.php");
+    }
 
     $id = $connection->retrieve("SELECT LAST_INSERT_ID();");
 

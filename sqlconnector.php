@@ -17,7 +17,7 @@
 										$this->credentials->database);
 			
 			if ($this->db_connection->connect_error) {
-				die($this->db_connection->connect_error);
+				throw new Exception($this->db_connection->connect_error);
 			} else {
 				$this->connected = true;
 			}
@@ -27,19 +27,20 @@
 			if ($this->connected) {
 				$result = $this->db_connection->query($query);
 				if (!$result) {
-					die("Insertion failed: " . $this->db_connection->error);
+					throw new Exception("Insertion failed: " . $this->db_connection->error);
+					//die("Insertion failed: " . $this->db_connection->error);
 				} else {
 					return true;
 				}
 			} else {
-				die("Not connected to a server");
+				throw new Exception("Not connected to a server");
 			}
 		}
 		
 		function retrieve($query) {
 			$result = $this->db_connection->query($query);
 			if (!$result) {
-				die("Retrieval failed: ". $this->db_connection->error);
+				throw new Exception("Retrieval failed: ". $this->db_connection->error);
 			} else {
 				$num_rows = $result->num_rows;
 				if ($num_rows === 0) {
