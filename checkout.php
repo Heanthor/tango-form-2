@@ -85,7 +85,7 @@ Released   : 20130731
     <div class="bottom_divider">
       <div class=paybutton>
           <p>Click here to proceed to Paypal to make payment.</p>
-          <p>If you'd like to make changes to your schedule, please click <a href="registration.html">here</a> to restart the registratoin process. Do not attempt to go back.</p>
+          <p>If you'd like to make changes to your schedule, please click <a href="registration.html">here</a> to restart the registration process. Do not attempt to go return to the previous form.</p>
           <p>Otherwise, click below to continue with your payment.</p><br><br><script 
                async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=terrapin.tango.festival@gmail.com" 
     data-button="buynow" 
