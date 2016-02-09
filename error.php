@@ -15,10 +15,7 @@ $message = $codes[$status][1];
 if ($title == false || strlen($status) != 3) {
        $message = 'Please supply a valid status code.';
 }
-// Insert headers here
-echo '<h1>'.$title.'</h1>
-<p>'.$message.'</p>';
-// Insert footer here
+
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -64,9 +61,14 @@ Released   : 20130731
     <h1><a href="#">7th annual <span>Terrapin Tango Festival</span></a></h1>
     <p>The University of Maryland, College Park, April 15-17, 2016</p>
 </div>
+<?php // Insert headers here
+echo '<h1>'.$title.'</h1>
+<p>'.$message.'</p>';
+// Insert footer here
+?>
     <div></div>
     <div class="bottom_divider" align="center">
-        <p><br>You have encountered an error.<br>We appologize for the inconvinience.<br>Please email us at <a href="mailto:Terrapin.Tango.Festival@gmail.com?Subject=Site%20Error <?php echo $codes[$status][0]?>">terrapin.tango.festival@gmail.com</a> and tell us as much as you can about what led you to this page, what internet browser you used, and any other information related to your experience so we can attempt to remedy the situation as quickly as possible.</p>
+        <p><br>You have encountered an error. We appologize for the inconvinience.<br>Please email us at <a href="mailto:Terrapin.Tango.Festival@gmail.com?Subject=Site%20Error <?php echo $codes[$status][0]?>">terrapin.tango.festival@gmail.com</a> and tell us as much as you can about what led you to this page, what internet browser you used, and any other information related to your experience so we can attempt to remedy the situation as quickly as possible.</p>
     </div>
     
 
