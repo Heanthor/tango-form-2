@@ -5,6 +5,7 @@ require_once("fileEditor.php");
 require_once("sqlconnector.php");
 require_once("dbLogin.php");
 
+session_start();
 
 ini_set('log_errors', true);
 ini_set('error_log', dirname(__FILE__).'/ipn_errors.log');
@@ -31,9 +32,18 @@ try {
     exit(0);
 }
 
+if (isset($_SESSION['submission_id'])) {
+    $id = $_SESSION['submission_id'];
+} else {
+    $id = 1;
+}
+
 if ($verified) {
-    $fe1->writeToFile($listener->get_transaction_id());
-    $connection->insert("insert into confirmation values(69, 4, 4)");
+    $post_data = $listener->get_post_data();
+    $transaction_id = $post_data['txn_id'];
+    $payment_gross = $post_data['mc_gross'];
+    $status = $post_data['payment_status'];
+    $connection->insert("insert into confirmation (registerid, transaction_id, total, payment_status) values($id, $transaction_id, $payment_gross, '$status');");
 } else {
     $fe1->writeToFile("Failure");
 }

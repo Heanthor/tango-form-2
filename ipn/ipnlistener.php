@@ -246,8 +246,8 @@ class IpnListener {
         return $r;
     }
     
-	public function get_transaction_id() {
-		return $this->post_data['txn_id'];
+	public function get_post_data() {
+		return $this->post_data;
 	}
 	
     /**

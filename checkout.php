@@ -10,6 +10,38 @@ Version    : 1.0
 Released   : 20130731
 
 -->
+
+<?php
+    require_once("sqlconnector.php");
+    require_once("dbLogin.php");
+    require_once("fileEditor.php");
+
+    session_start();
+
+    // receive data
+    $selected_classes = implode(",", json_decode($_POST['class_string']));
+    $price = intval($_POST['price']);
+    $tax = $price * 0.035;
+    $id = $_SESSION['submission_id'];
+
+    // prep connecting to db
+    $fe = new FileEditor('login-info.txt');
+    $credentials = $fe->readFile();
+    $cred = new Credentials("terrapintango.cgpkve9uh8yp.us-east-1.rds.amazonaws.com", $credentials[0], $credentials[1], "tangodb", 3306);
+    //$cred = new Credentials("localhost", "tango", "tango", "test");
+    $connection = new SQLConnector($cred);
+    $connection->connect();
+
+    $query = "INSERT INTO `classes` (`registerid`, `classes`, `price`,  `referencenum`, `confirmation`)
+            VALUES ('$id', '$selected_classes', '$price', '1234', '50');";
+
+    $connection->insert($query);
+
+    //print_r( $selected_classes);
+    //echo "<br />";
+    //echo $price;
+?>
+
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     <script source=></script>
@@ -46,12 +78,6 @@ Released   : 20130731
 </div>
     <div></div>
     <div class="bottom_divider">
-        <?php 
-            session_start();
-            $price = $_SESSION['price'];
-            $tax = $price * 0.035;
-        ?>
-        
       <div class=paybutton>
           <p>Click here to proceed to Paypal to make payment.</p><br><br><script 
                async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=terrapin.tango.festival@gmail.com" 
@@ -61,6 +87,7 @@ Released   : 20130731
     data-shipping="0" 
     data-tax="<?php echo $tax ?>" 
     data-env=""
+    data-callback="http://terrapintangofestival.elasticbeanstalk.com/ipn_listener.php"
                     ></script></div>
     </div>
     

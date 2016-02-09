@@ -33,7 +33,7 @@
             <span class='statustext' id='dancertype'>Your ticket type: <?php echo($ticket_string."<br />")?></span>
             <span class='statustext' id='status'>Select a Pass type</span><br />
             <span class='statustext' id='yourprice'>Your price is: $<span id='numeric_price'>0.00</span></span>
-            <form action="submit_classes.php" method="POST">
+            <form action="checkout.php" method="POST">
                 <input type="submit" id='submit' name="submit" value="Submit schedule">
                 <input type="text" name="class_string" id="class_string" value="" hidden>
                 <input type="text" name="price" id="price" value="" hidden>
