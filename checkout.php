@@ -38,8 +38,8 @@ Released   : 20130731
     try {
         $connection->insert($query);    
     } catch (Exception $e) {
-        $_SESSION['sql_error'] = $e->getMessage();
-        header("Location: error.php");
+        $error = $e->getMessage();
+        header("Location: error.php?sql_error=$error");
     }
 
     //print_r( $selected_classes);

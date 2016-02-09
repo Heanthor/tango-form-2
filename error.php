@@ -1,9 +1,8 @@
 <?php
-session_start();
 
-if (isset($_SESSION['sql_error'])) {
+if (isset($_GET['sql_error'])) {
        $title = "Database error";
-       $message = $_SESSION['sql_error'];
+       $message = $_GET['sql_error'];
 } else {
        $status = $_SERVER['REDIRECT_STATUS'];
        $codes = array(

@@ -4,6 +4,7 @@
     require_once("fileEditor.php");
 
     session_start();
+    session_unset();
 
     $first_name = $_POST['fname'];
     $last_name = $_POST['lname'];
@@ -42,8 +43,8 @@
     try {
         $connection->insert($query);    
     } catch (Exception $e) {
-        $_SESSION['sql_error'] = $e->getMessage();
-        header("Location: error.php");
+        $error = $e->getMessage();
+        header("Location: error.php?sql_error=$error");
     }
 
     $id = $connection->retrieve("SELECT LAST_INSERT_ID();");
