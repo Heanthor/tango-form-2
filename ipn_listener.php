@@ -24,15 +24,16 @@ $fe1 = new FileEditor("log.txt");
 $fe1->writeToFile("Run");
 try {
     $verified = $listener->processIpn();
+    
+        try {
+        $connection->insert("insert into confirmation (registerid, transaction_id, total, payment_status) values(22, 1111, 1234, 'No catch');");
+    } catch (Exception $e) {
+        $fe1->writeToFile("ERROR: ".$e->getMessage());
+    }
 } catch (Exception $e) {
     // fatal error trying to process IPN.
     $fe1->writeToFile($e);
     
-    try {
-        $connection->insert("insert into confirmation (registerid, transaction_id, total, payment_status) values(22, 1111, 1234, '".$e->getMessage()."');");
-    } catch (Exception $e) {
-        $fe1->writeToFile("ERROR: ".$e->getMessage());
-    }
     exit(0);
 }
 
