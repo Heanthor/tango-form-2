@@ -6,10 +6,10 @@
     session_start();
     session_unset();
 
-    $first_name = $_POST['fname'];
-    $last_name = $_POST['lname'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
+    $first_name = mysqli::real_escape_string($_POST['fname']);
+    $last_name = mysqli::real_escape_string($_POST['lname']);
+    $email = mysqli::real_escape_string($_POST['email']);
+    $phone = mysqli::real_escape_string($_POST['phone']);
 
     $ticket_type = $_POST['status'];
     $type = $_POST['dancer'];
