@@ -13,6 +13,7 @@
     $fri_milonga_limit = 150;
     $sat_milonga_limit = 300;
     $sun_milonga_limit = 100;
+    $yoga_limit = 1;
 
     // map table indices to events
     $milongas = array(5, 19, 33);
@@ -60,7 +61,7 @@
     $closed_status = array();
     // save into a better format
     $master_class_list = $master_class_list->getContainer();
-    // evaluate if class is full
+    // evaluate if class is full from this user's perspective
     $user_type = $_SESSION['dancertype'];
 
     foreach ($master_class_list as $class => $status) {
@@ -71,6 +72,8 @@
             $limit = $sat_milonga_limit;
         } else if ($class == $milongas[2]) {
             $limit = $sun_milonga_limit;
+        } else if (in_array($class, $yogas)) {
+            $limit = $yoga_limit;
         } else {
             $limit = $class_limit;
         }
