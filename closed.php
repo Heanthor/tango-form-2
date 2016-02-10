@@ -63,9 +63,11 @@
         }
     }
 
+
     $closed_status = array();
     // save into a better format
     $master_class_list = $master_class_list->getContainer();
+        print_r($master_class_list);
     // evaluate if class is full from this user's perspective
     $user_type = $_SESSION['dancertype'];
 
