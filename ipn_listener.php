@@ -45,17 +45,12 @@ if ($verified) {
     $status = $post_data['payment_status'];
     //not seen by user, so no error redirection
     try {
-        $connection->insert("insert into confirmation (registerid, transaction_id, total, payment_status) values($id, $transaction_id, $payment_gross, '$status');");
+        $connection->insert("insert into confirmation (registerid, total, payment_status, transaction_id) values($id, $payment_gross, '$status', '$transaction_id');");
     } catch (Exception $e) {
         $fe1->writeToFile("ERROR: ".$e->getMessage());
     }
     
 } else {
     $fe1->writeToFile("Failure");
-    try {
-        $connection->insert("insert into confirmation (registerid, transaction_id, total, payment_status) values(22, 1111, 1234, 'Not verified');");
-    } catch (Exception $e) {
-        $fe1->writeToFile("ERROR: ".$e->getMessage());
-    }
 }
 ?>
