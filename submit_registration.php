@@ -31,7 +31,6 @@
     if ($_POST['partner'] == "2") {
         $partner_fname = mysqli_real_escape_string($connection, "'".$_POST['fname2']."'");
         $partner_lname = mysqli_real_escape_string($connection, "'".$_POST['lname2']."'");
-
         $partner_type = mysqli_real_escape_string($connection, "'".$_POST['partnerdancerh']."'");
     }
 
