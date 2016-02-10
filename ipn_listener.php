@@ -9,7 +9,7 @@ ini_set('log_errors', true);
 ini_set('error_log', dirname(__FILE__).'/ipn_errors.log');
 
 $listener = new IpnListener();
-$listener->use_sandbox = true;
+//$listener->use_sandbox = true;
 $listener->use_curl = false;
 
 $fe = new FileEditor('login-info.txt');
@@ -33,7 +33,7 @@ try {
 if (isset($_GET['submission_id'])) {
     $id = $_GET['submission_id'];
 } else {
-    $id = -1; // debug
+    $id = 22; // debug
 }
 
 if ($verified) {
@@ -51,5 +51,4 @@ if ($verified) {
 } else {
     $fe1->writeToFile("Failure");
 }
-
 ?>
