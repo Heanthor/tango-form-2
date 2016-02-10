@@ -31,13 +31,13 @@
     
     // Only if partner is selected
     if ($_POST['partner'] == "2") {
-        $partner_fname = "'".$_POST['fname2']."'";
-        $partner_lname = "'".$_POST['lname2']."'";
-        $partner_type = "'".$_POST['partnerdancerh']."'";
+        $partner_fname = $_POST['fname2'];
+        $partner_lname = $_POST['lname2'];
+        $partner_type = $_POST['partnerdancerh'];
         
-        $partner_fname = mysqli_real_escape_string($sqli_ref, $partner_fname);
-        $partner_lname = mysqli_real_escape_string($sqli_ref, $partner_lname);
-        $partner_type = mysqli_real_escape_string($sqli_ref, $partner_type);
+        $partner_fname = "'".mysqli_real_escape_string($sqli_ref, $partner_fname)."'";
+        $partner_lname = "'".mysqli_real_escape_string($sqli_ref, $partner_lname)."'";
+        $partner_type = "'".mysqli_real_escape_string($sqli_ref, $partner_type)."'";
     }
 
     // escape strings
