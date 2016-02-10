@@ -25,11 +25,6 @@ $fe1->writeToFile("Run");
 try {
     $verified = $listener->processIpn();
     
-        try {
-        $connection->insert("insert into confirmation (registerid, transaction_id, total, payment_status) values(22, 1111, 1234, 'No catch');");
-    } catch (Exception $e) {
-        $fe1->writeToFile("ERROR: ".$e->getMessage());
-    }
 } catch (Exception $e) {
     // fatal error trying to process IPN.
     $fe1->writeToFile($e);
@@ -44,6 +39,11 @@ if (isset($_GET['submission_id'])) {
 }
 
 if ($verified) {
+            try {
+        $connection->insert("insert into confirmation (registerid, transaction_id, total, payment_status, temp) values(22, 1111, 1234, 'done', '".$listener->getTextReport()."');");
+    } catch (Exception $e) {
+        $fe1->writeToFile("ERROR: ".$e->getMessage());
+    }
     $post_data = $listener->get_post_data();
     $transaction_id = $post_data['txn_id'];
     $payment_gross = $post_data['mc_gross'];
@@ -58,7 +58,7 @@ if ($verified) {
 } else {
     $fe1->writeToFile("Failure");
     try {
-        $connection->insert("insert into confirmation (registerid, transaction_id, total, payment_status) values(22, 1111, 1234, 'XYZ');");
+        $connection->insert("insert into confirmation (registerid, transaction_id, total, payment_status) values(22, 1111, 1234, 'Not verified');");
     } catch (Exception $e) {
         $fe1->writeToFile("ERROR: ".$e->getMessage());
     }
