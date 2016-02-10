@@ -37,7 +37,6 @@
         echo $e->getMessage();
     }
 
-    //print_r($class_info);
     // handle case for one entry in db
     if (isset($class_info['classes'])) {
         $class_info = array($class_info);
@@ -46,7 +45,7 @@
     $master_class_list = new Defaultdict(array("LEADER" => 0, "FOLLOWER" => 0)); // <3 from python
 
     // loop through entries
-    print_r($class_info);
+    //print_r($class_info);
     foreach ($class_info as $entry) {
         $split = explode(",", $entry['classes']);
 
@@ -68,7 +67,6 @@
     $closed_status = array();
     // save into a better format
     $master_class_list = $master_class_list->getContainer();
-    print_r($master_class_list);
     // evaluate if class is full from this user's perspective
     $user_type = $_SESSION['dancertype'];
 
