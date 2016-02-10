@@ -28,10 +28,15 @@
     $connection = new SQLConnector($cred);
     $connection->connect();
 
-    $class_info = $connection->retrieve("SELECT c.classes, r.dancertype, r.partnerfname
-                                        FROM records r, classes c, confirmation f
-                                        WHERE r.registerid = c.registerid and r.registerid = f.registerid and
-                                        f.payment_status = 'Completed';");
+    try {
+        $class_info = $connection->retrieve("SELECT c.classes, r.dancertype, r.partnerfname
+                                    FROM records r, classes c, confirmation f
+                                    WHERE r.registerid = c.registerid and r.registerid = f.registerid and
+                                    f.payment_status = 'Completed';");
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+
     //print_r($class_info);
     $master_class_list = new Defaultdict(array("LEADER" => 0, "FOLLOWER" => 0)); // <3 from python
 

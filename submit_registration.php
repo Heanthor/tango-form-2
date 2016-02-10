@@ -44,6 +44,7 @@
     $first_name = mysqli_real_escape_string($sqli_ref, $first_name);
     $last_name = mysqli_real_escape_string($sqli_ref, $last_name);
     $email = mysqli_real_escape_string($sqli_ref, $email);
+    $phone = mysqli_real_escape_string($sqli_ref, $phone);
     
     // store into db
     $query = "INSERT INTO `records` (`fname`, `lname`, `email`, `phone`, `tickettype`,
