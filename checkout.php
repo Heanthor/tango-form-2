@@ -94,7 +94,7 @@ Released   : 20130731
     data-shipping="0" 
     data-tax="<?php echo $tax ?>" 
     data-env="sandbox"
-    data-callback="http://terrapintangofestival.elasticbeanstalk.com/ipn_listener.php?submission_id=<?php echo $id?>"
+    data-callback="http://quillchat.com/reed/ipn_listener.php?submission_id=<?php echo $id?>"
                     ></script></div>
     </div>
     
