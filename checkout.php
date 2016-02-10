@@ -21,7 +21,7 @@ Released   : 20130731
     // receive data
     $selected_classes = implode(",", json_decode($_POST['class_string']));
     $price = intval($_POST['price']);
-    $tax = round($price * 0.035, 2);
+    $tax = round(($price * 0.035) + 0.30, 2);
     $id = $_SESSION['submission_id'];
 
     // prep connecting to db
