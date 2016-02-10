@@ -1,0 +1,127 @@
+body {
+    background: #282828 url(../images/bg01.png) repeat;
+}
+
+input[type=submit] {
+      display: inline-block;
+    margin-top: 2em;
+    background: #BC1414;
+    border-radius: 5px;
+    line-height: 4em;
+    padding: 0 3em;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -ms-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+    letter-spacing: 0.25em;
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: 0;
+    white-space: nowrap;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 1000;
+    font-size: 0.80em !important;
+    color: #fff !important;
+}
+
+.scheduleform {
+    padding-top: 50px;
+    margin: 0 auto;
+    float: left;
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+}
+
+.wrapper {
+    padding: 20px;
+    width: 300px;
+    padding-top: 50px;
+    float: left;
+    position: fixed;
+}
+
+.red_text {
+    color: #BC1414;
+}
+.spacer {
+    width: 320px;
+    height: 200px;
+    float: left;
+}
+
+.statustext {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    text-align: center;
+    color: #838383;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+table {
+    text-align: center;
+    background: #333333;
+    color: #838383;
+    width: 800px;
+}
+
+/* Milongas */
+h2 {
+    margin: 0;
+    color: #fa85d1;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-shadow:
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+h3 {
+    font-size: 1em;
+    font-weight: 400;
+    padding: 3px
+}
+
+.aqua {
+    background-color:#22cbc4;
+    color: black;
+    opacity: 1;
+}
+
+.alice {
+    background-color: #6cd0e2;
+    color: black;
+    opacity: 1;
+}
+
+.yoga {
+    font-size: 1.7em;
+    color: black;
+    padding: 5px 0;
+    background-color: #fa85d1
+}
+table.center {
+    margin: 0 auto;
+}
+
+.divider {
+    margin-bottom: 2.5vh;
+}
+
+table { border: 1px solid #000; border-collapse: collapse; }
+td { border-top: 1px solid #000; border-left: 1px solid #000; border-bottom: 1px solid #000; border-right: 1px solid #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;}
+
+td.selected {
+    outline: 3px solid #BC1414;
+}
+
+.location {
+    font-size: 1.8em;
+}
