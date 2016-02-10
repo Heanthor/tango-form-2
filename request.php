@@ -42,8 +42,8 @@
         $toReturn = array();
         global $all_prices;
 
-        $map = array("general" => 0, "general (partner)"=> 1,
-        "student" => 2, "student (partner)" => 3);
+        $map = array("General" => 0, "General (partner)"=> 1,
+        "Student" => 2, "Student (partner)" => 3);
 
         foreach($all_prices as $name => $price_array) {
             $toReturn[$name] = $price_array[$map[$pass_type]];
