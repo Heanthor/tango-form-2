@@ -9,7 +9,7 @@ ini_set('log_errors', true);
 ini_set('error_log', dirname(__FILE__).'/ipn_errors.log');
 
 $listener = new IpnListener();
-$listener->use_sandbox = true;
+//$listener->use_sandbox = true;
 $listener->use_curl = false;
 
 $fe = new FileEditor('login-info.txt');
