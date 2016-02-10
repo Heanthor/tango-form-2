@@ -76,9 +76,9 @@ $(document).ready(function(){
                 success: function(data) {
                     console.log(data);
                     var response = JSON.parse(data);
-                    $("#status").html(response[0]);
-                    $("#yourprice").html("Your price is: $<span id='numeric_price'>"
-                                        + response[1] + ".00</span>");
+                    $("#status").html("Selected options: <br /><span class='red_text'>" + response[0]) + "</span>";
+                    $("#yourprice").html("Your price is:  <span class='red_text'>$<span id='numeric_price'>"
+                                        + response[1] + ".00</span></span>");
                 }
             });
         }

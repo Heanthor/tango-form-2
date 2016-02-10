@@ -43,9 +43,10 @@ if ($verified) {
     $transaction_id = $post_data['txn_id'];
     $payment_gross = $post_data['mc_gross'];
     $status = $post_data['payment_status'];
+    $payer_email = $post_data['payer_email'];
     //not seen by user, so no error redirection
     try {
-        $connection->insert("insert into confirmation (registerid, total, payment_status, transaction_id) values($id, $payment_gross, '$status', '$transaction_id');");
+        $connection->insert("insert into confirmation (registerid, total, payment_status, transaction_id, payer_email) values($id, $payment_gross, '$status', '$transaction_id', '$payer_email');");
     } catch (Exception $e) {
         $fe1->writeToFile("ERROR: ".$e->getMessage());
     }
