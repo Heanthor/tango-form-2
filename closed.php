@@ -38,16 +38,16 @@
     }
 
     //print_r($class_info);
+    // handle case for one entry in db
+    if (isset($class_info['classes'])) {
+        $class_info = array($class_info);
+    }
+    
     $master_class_list = new Defaultdict(array("LEADER" => 0, "FOLLOWER" => 0)); // <3 from python
 
     // loop through entries
     print_r($class_info);
     foreach ($class_info as $entry) {
-        // handle case for one entry in db
-        if (isset($class_info['classes'])) {
-            $entry = $class_info;
-        }
-
         $split = explode(",", $entry['classes']);
 
         if (!$entry['partnerfname']) {
