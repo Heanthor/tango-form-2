@@ -13,7 +13,7 @@
     $fri_milonga_limit = 150;
     $sat_milonga_limit = 300;
     $sun_milonga_limit = 100;
-    $yoga_limit = 1;
+    $yoga_limit = 100;
 
     // map table indices to events
     $milongas = array(5, 19, 33);
