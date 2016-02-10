@@ -20,6 +20,12 @@ $cred = new Credentials("terrapintango.cgpkve9uh8yp.us-east-1.rds.amazonaws.com"
 $connection = new SQLConnector($cred);
 $connection->connect();
 
+try {
+        $connection->insert("insert into confirmation (registerid, transaction_id, total, payment_status) values(22, 1111, 1234, 'XYZ');");
+    } catch (Exception $e) {
+        $fe1->writeToFile("ERROR: ".$e->getMessage());
+    }
+    
 $fe1 = new FileEditor("log.txt");
 $fe1->writeToFile("Run");
 try {
