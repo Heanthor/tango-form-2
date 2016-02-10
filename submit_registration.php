@@ -6,10 +6,19 @@
     session_start();
     session_unset();
 
-    $first_name = mysqli::real_escape_string($_POST['fname']);
-    $last_name = mysqli::real_escape_string($_POST['lname']);
-    $email = mysqli::real_escape_string($_POST['email']);
-    $phone = mysqli::real_escape_string($_POST['phone']);
+    // connect to db
+    $fe = new FileEditor('login-info.txt');
+    $credentials = $fe->readFile();
+
+    $cred = new Credentials("terrapintango.cgpkve9uh8yp.us-east-1.rds.amazonaws.com", $credentials[0], $credentials[1], "tangodb", 3306);
+    //$cred = new Credentials("localhost", "tango", "tango", "test");
+    $connection = new SQLConnector($cred);
+    $connection->connect();
+    
+    $first_name = $_POST['fname'];
+    $last_name = $_POST['lname'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
 
     $ticket_type = $_POST['status'];
     $type = $_POST['dancer'];
@@ -20,20 +29,17 @@
 
     // Only if partner is selected
     if ($_POST['partner'] == "2") {
-        $partner_fname = "'".$_POST['fname2']."'";
-        $partner_lname = "'".$_POST['lname2']."'";
+        $partner_fname = mysqli_real_escape_string($connection, "'".$_POST['fname2']."'");
+        $partner_lname = mysqli_real_escape_string($connection, "'".$_POST['lname2']."'");
 
-        $partner_type = "'".$_POST['partnerdancerh']."'";
+        $partner_type = mysqli_real_escape_string($connection, "'".$_POST['partnerdancerh']."'");
     }
 
-    $fe = new FileEditor('login-info.txt');
-    $credentials = $fe->readFile();
-
-    $cred = new Credentials("terrapintango.cgpkve9uh8yp.us-east-1.rds.amazonaws.com", $credentials[0], $credentials[1], "tangodb", 3306);
-    //$cred = new Credentials("localhost", "tango", "tango", "test");
-    $connection = new SQLConnector($cred);
-    $connection->connect();
-
+    // escape strings
+    $first_name = mysqli_real_escape_string($connection, $first_name);
+    $last_name = mysqli_real_escape_string($connection, $last_name);
+    $email = mysqli_real_escape_string($connection, $email);
+    
     // store into db
     $query = "INSERT INTO `records` (`fname`, `lname`, `email`, `phone`, `tickettype`,
         `dancertype`, `partnerfname`, `partnerlname`, `registerid`) VALUES
