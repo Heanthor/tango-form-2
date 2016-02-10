@@ -39,11 +39,6 @@ if (isset($_GET['submission_id'])) {
 }
 
 if ($verified) {
-            try {
-        $connection->insert("insert into confirmation (registerid, transaction_id, total, payment_status, temp) values(22, 1111, 1234, 'done', '".$listener->getTextReport()."');");
-    } catch (Exception $e) {
-        $fe1->writeToFile("ERROR: ".$e->getMessage());
-    }
     $post_data = $listener->get_post_data();
     $transaction_id = $post_data['txn_id'];
     $payment_gross = $post_data['mc_gross'];
