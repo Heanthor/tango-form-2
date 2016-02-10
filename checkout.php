@@ -87,10 +87,7 @@ Released   : 20130731
           <p>Click here to proceed to Paypal to make payment.</p>
           <p>If you'd like to make changes to your schedule, please click <a href="registration.html">here</a> to restart the registration process. Do not attempt to go return to the previous form.</p>
           <p>Otherwise, click below to continue with your payment.</p><br><br><script 
-               async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=terrapin.tango.festival-facilitator@gmail.com
-Password:
-Change password
-" 
+               async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=terrapin.tango.festival-facilitator@gmail.com" 
     data-button="buynow" 
     data-name="Terrapin Tango Festival Registration" 
     data-amount="<?php echo $price ?>" 
