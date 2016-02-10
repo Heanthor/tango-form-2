@@ -96,7 +96,7 @@ Change password
     data-amount="<?php echo $price ?>" 
     data-shipping="0" 
     data-tax="<?php echo $tax ?>" 
-    data-env=""
+    data-env="sandbox"
     data-callback="http://terrapintangofestival.elasticbeanstalk.com/ipn_listener.php?submission_id=<?php echo $id?>"
                     ></script></div>
     </div>
