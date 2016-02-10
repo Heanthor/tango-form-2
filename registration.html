@@ -118,7 +118,7 @@ Released   : 20130731
     </div>
     </p>
     <p>
-    <strong> * I have read and agree to abide by the <a href='http://www.studentorg.umd.edu/atc/site/festival/register/refund.html'>refund policy and terms and conditions. </a> </strong><br />
+    <strong> * I have read and agree to abide by the <a href='http://terrapintangofestival.elasticbeanstalk.com/register.html'>refund policy and terms and conditions. </a> </strong><br />
     <input type='checkbox' name='confirm' id='confirm' required>&nbsp;&nbsp;<label for='confirm'>Confirm</label>
     </p>
     <br /><br />
@@ -131,6 +131,17 @@ Released   : 20130731
 window.onsubmit = function() {
     var alertString = "";
 
+    if (document.getElementById("fname").value.length == 0) {
+        alertString += "Please enter a first name.";
+    }
+    if (document.getElementById("lname").value.length == 0) {
+        alertString += "Please enter a last name.";
+    }
+    if (document.getElementById("email").value.length == 0 ||
+        document.getElementById("email").value.indexOf("@") == -1) {
+        alertString += "Please enter a valid email address.";
+    }
+
     // check phone number
     var phoneText = document.getElementById("phone").value;
     // strip non numeric characters
@@ -140,7 +151,12 @@ window.onsubmit = function() {
     if (phoneText.length != 10 &&
         !(phoneText.length == 11 && phoneText[0] == "1")) {
             alertString += "Please enter a valid phone number (xxx xxx xxxx or 1 xxx xxx xxxx).";
-        }
+    }
+
+    // confirmation check
+    if (!document.getElementById("confirm").checked) {
+        alertString += "Please confirm you have read the refund policy and terms and conditions.";
+    }
 
     // partner check
     if (document.getElementById("2").checked) {

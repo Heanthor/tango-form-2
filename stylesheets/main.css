@@ -5,6 +5,7 @@ body {
 input[type=submit] {
       display: inline-block;
     margin-top: 2em;
+    margin-bottom: 2em;
     background: #BC1414;
     border-radius: 5px;
     line-height: 4em;
@@ -52,11 +53,15 @@ input[type=submit] {
 
 .statustext {
     font-family: "Roboto Slab", serif;
-    font-weight: 500;
     text-align: center;
     color: #838383;
     font-size: 1.5em;
     font-weight: 700;
+}
+
+.smalltext {
+    font-size: 0.7em;
+    font-weight: 400;
 }
 
 table {
