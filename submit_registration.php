@@ -27,17 +27,18 @@
     $partner_lname = "NULL";
     $partner_type = "NULL";
 
+    $sqli_ref = $connection->getConnection();
     // Only if partner is selected
     if ($_POST['partner'] == "2") {
-        $partner_fname = mysqli_real_escape_string($connection, "'".$_POST['fname2']."'");
-        $partner_lname = mysqli_real_escape_string($connection, "'".$_POST['lname2']."'");
-        $partner_type = mysqli_real_escape_string($connection, "'".$_POST['partnerdancerh']."'");
+        $partner_fname = mysqli_real_escape_string($sqli_ref, "'".$_POST['fname2']."'");
+        $partner_lname = mysqli_real_escape_string($sqli_ref, "'".$_POST['lname2']."'");
+        $partner_type = mysqli_real_escape_string($sqli_ref, "'".$_POST['partnerdancerh']."'");
     }
 
     // escape strings
-    $first_name = mysqli_real_escape_string($connection, $first_name);
-    $last_name = mysqli_real_escape_string($connection, $last_name);
-    $email = mysqli_real_escape_string($connection, $email);
+    $first_name = mysqli_real_escape_string($sqli_ref, $first_name);
+    $last_name = mysqli_real_escape_string($sqli_ref, $last_name);
+    $email = mysqli_real_escape_string($sqli_ref, $email);
     
     // store into db
     $query = "INSERT INTO `records` (`fname`, `lname`, `email`, `phone`, `tickettype`,
