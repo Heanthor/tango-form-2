@@ -41,8 +41,8 @@
                 <input type="text" name="price" id="price" value="" hidden>
             </form>
             <div class='status_text'>
-                <span class='statustext'><span class='red_text'>Instructions</span><br /><span class='smalltext'>Please select the workshops, yoga, and milongas you wish to attend. The cheapest pass option and total price for classes will be automatically displayed above.
-Please note, if a class is currently full it will be grayed out and will not be selectable, please chose another option and contact us for more information on waitlisting classes.
+                 <span class='statustext'><span class='red_text'>Instructions</span><br /><span class='smalltext'>Select ALL workshops, yoga, and milongas you wish to attend. The cheapest pass option and total price will be automatically displayed above.
+If a class is currently full it will be grayed out and will not be selectable, please chose another option and contact us for more information on waitlisting classes.
 </span></span>
             </div>
         </div>
