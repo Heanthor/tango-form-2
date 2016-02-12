@@ -121,7 +121,12 @@ td { border-top: 1px solid #000; border-left: 1px solid #000; border-bottom: 1px
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;}
+    transition: all 0.5s ease;
+    cursor: pointer;}
+    
+.nonselectable {
+    cursor: auto;
+}
 
 td.selected {
     outline: 3px solid #BC1414;
