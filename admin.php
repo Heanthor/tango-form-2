@@ -23,14 +23,16 @@
     function drawPage() {
         global $credentials;
         $body = "";
+
+        $login = new Credentials("terrapintango.cgpkve9uh8yp.us-east-1.rds.amazonaws.com", $credentials[0], $credentials[1], "tangodb");
+        $connector = new SQLConnector($login);
+
+        $connector->connect();
+        //print_r($result);
+
         if (isset($_POST['submit'])) {
             $fields = $_POST['field'];
             $fieldsString = implode(", ", $fields);
-            $login = new Credentials("terrapintango.cgpkve9uh8yp.us-east-1.rds.amazonaws.com", $credentials[0], $credentials[1], "tangodb");
-            $connector = new SQLConnector($login);
-
-            $connector->connect();
-            //print_r($result);
 
             foreach ($fields as $table) {
                 if ($table == "ConfirmedRegistrants") {
@@ -45,6 +47,11 @@
                 $result = $connector->retrieve($query);
                 $body .= "<h1>".ucfirst($table)."</h1>".drawTable($result);
             }
+        } else if (isset($_POST['arbsubmit'])) {
+            $query = $_POST['arbtext'];
+            $result = $connector->retrieve($query);
+
+            $body .= "<h1>$query</h1>".drawTable($result);
         } else {
             $body =<<<BODY
                 <h1> Database Access </h1>
@@ -61,6 +68,12 @@
                     </p>
                     <p>
                         <input type="submit" name="submit" value="Display Tables">
+                    </p>
+                    <p>
+                        <input type='text' name='arbtext'>
+                    </p>
+                    <p>
+                        <input type='submit' name='arbsubmit' value='Submit arbitrary query'>
                     </p>
                 </form>
 BODY;
