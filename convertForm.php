@@ -20,6 +20,7 @@
                     33 => "Shellebration milonga");
 
     function get_classname($index) {
+        global $classes;
         if (!in_array($index, array_keys($classes))) {
             return "INVALID INDEX";
         } else {
