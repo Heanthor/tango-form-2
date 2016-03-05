@@ -106,6 +106,6 @@ window.onsubmit = function() {
 
         return false;
     } else {
-        return true;
+        return confirm("Please double check all classes (including milongas and yoga sessions) you wish to attend are selected.");
     }
 }
