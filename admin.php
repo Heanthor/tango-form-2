@@ -47,11 +47,15 @@
                 $result = $connector->retrieve($query);
                 $body .= "<h1>".ucfirst($table)."</h1>".drawTable($result);
             }
-        } else if (isset($_POST['arbsubmit'])) {
+        } else if (isset($_POST['arbsubmitr'])) {
             $query = $_POST['arbtext'];
             $result = $connector->retrieve($query);
-
             $body .= "<h1>$query</h1>".drawTable($result);
+        } else if (isset($_POST['arbsubmiti'])) {
+            $query = $_POST['arbtext'];
+            $result = $connector->insert($query);
+            $body .= "Query successful.";
+            $body .= "<p><form action='admin.php' method=POST><input type='submit' value='Back'></form></p>";
         } else if (isset($_POST['classprint'])) {
 			header("Location: printClasses.php");
 		} else {
@@ -75,7 +79,8 @@
                         <input type='text' name='arbtext'>
                     </p>
                     <p>
-                        <input type='submit' name='arbsubmit' value='Submit arbitrary query'>
+                        <input type='submit' name='arbsubmitr' value='Submit arbitrary query (Get response)'>
+                        <input type='submit' name='arbsubmiti' value='Submit arbitrary query (Do not get response)'>
                     </p>
 					<p>
 						<input type='submit' name='classprint' value='Class information'>
