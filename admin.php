@@ -36,7 +36,7 @@
 
             foreach ($fields as $table) {
                 if ($table == "ConfirmedRegistrants") {
-                    $query = "SELECT r.fname, r.lname, r.email, c.classes, c.price
+                    $query = "SELECT r.fname, r.lname, r.partnerfname, r.email, c.classes, c.price
                                                         FROM records r, classes c, confirmation f
                                                         WHERE r.registerid = c.registerid and r.registerid = f.registerid and
                                                         f.payment_status = 'Completed'";
