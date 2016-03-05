@@ -53,8 +53,18 @@
             $body .= "<h1>$query</h1>".drawTable($result);
         } else if (isset($_POST['arbsubmiti'])) {
             $query = $_POST['arbtext'];
-            $result = $connector->insert($query);
-            $body .= "Query successful.";
+            $error = false;
+            try {
+                $result = $connector->insert($query);
+            } catch (Exception $e) {
+                echo $e->getMessage();
+                $error = true;
+            }
+
+            if (!$error) {
+                $body .= "Query successful.";
+            }
+
             $body .= "<p><form action='admin.php' method=POST><input type='submit' value='Back'></form></p>";
         } else if (isset($_POST['classprint'])) {
 			header("Location: printClasses.php");
