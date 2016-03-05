@@ -63,7 +63,6 @@
         }
     }
 
-
     $closed_status = array();
     // save into a better format
     $master_class_list = $master_class_list->getContainer();

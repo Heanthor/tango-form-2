@@ -52,7 +52,9 @@
             $result = $connector->retrieve($query);
 
             $body .= "<h1>$query</h1>".drawTable($result);
-        } else {
+        } else if (isset($_POST['classprint'])) {
+			header("Location: printClasses.php");
+		} else {
             $body =<<<BODY
                 <h1> Database Access </h1>
 
@@ -75,31 +77,12 @@
                     <p>
                         <input type='submit' name='arbsubmit' value='Submit arbitrary query'>
                     </p>
+					<p>
+						<input type='submit' name='classprint' value='Class information'>
+					</p>
                 </form>
 BODY;
         }
         echo generatePage($body, "Admin Panel");
-    }
-    function drawTable($result) {
-        $table ="<table border=\"1\"><tr>";
-
-        foreach(array_keys($result[0]) as $header) {
-            $temp = ucfirst($header);
-            $table .= "<th align=\"center\">$temp</th>";
-        }
-        $table .="</tr>";
-        //Header done
-
-        foreach(array_values($result) as $value) {
-            $row = "<tr>";
-            foreach(array_values($value) as $entry) {
-                $row .= "<td>$entry</td>";
-            }
-            $row .= "</tr>";
-            $table .= $row;
-        }
-
-        $table .= "</table>";
-        return $table;
     }
 ?>
