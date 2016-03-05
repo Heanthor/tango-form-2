@@ -50,14 +50,14 @@ If a class is currently full it will be grayed out and will not be selectable, p
         <div class="scheduleform">
             <table class="center" border="1">
                 <tr> <th width=8%>Day</th> <th width=12%>Time</th><th width=40%>Daniela & Luis</th><th width=40%>Juan & Sol</th></tr>
-                <tr> <td rowspan='3' class='nonselectable'><h3>Fri<br /> 17 April</h3></td ></tr>
+                <tr> <td rowspan='3' class='nonselectable'><h3>Fri<br /> 15 April</h3></td ></tr>
                 <tr> <td class='nonselectable'>7-8:30pm</td> <td class=aqua>Finding Sacadas Everywhere<br />(Prince George's Room)</td><td class=alice>Float Like a Butterfly, Sting Like a Bee:<br />Suspension in the Dance<br />(Atrium)</td></tr>
                 <tr> <td class='nonselectable'>9pm-1am</td><td colspan='2'><h2>BREAK OUT OF YOUR<br />SHELL MILONGA</h2><br /><span class='location'>Atrium</span></td></tr>
             </table>
             <div class='divider'></div>
             <table class="center" border="1">
                 <tr> <th width=8%>Day</th> <th width=12%>Time</th><th width=40%>Daniela & Luis</th><th width=40%>Juan & Sol</th></tr>
-                <tr> <td rowspan='5' class='nonselectable'><h3>Sat <br /> 18 April</h3></td> <td class='nonselectable'>12-1:30pm</td> <td class=alice>Impossibly Small Turns: How to <br />Create Space Through the Embrace<br />(Colony Ballroom)</td><td class=aqua>The Dance Between the Beats: <br />Embellishments Hidden in Common Steps<br />(Prince George's Room)</td></tr>
+                <tr> <td rowspan='5' class='nonselectable'><h3>Sat<br /> 16 April</h3></td> <td class='nonselectable'>12-1:30pm</td> <td class=alice>Impossibly Small Turns: How to <br />Create Space Through the Embrace<br />(Colony Ballroom)</td><td class=aqua>The Dance Between the Beats: <br />Embellishments Hidden in Common Steps<br />(Prince George's Room)</td></tr>
                 <tr> <td class='nonselectable'>1:45-3:15pm</td> <td class=alice>Rhythmic Alteraciones for Vals <br />(Colony Ballroom)</td><td class=aqua>The Axis Unhinged: Comfy Volcadas<br />(Prince George's Room)</td></tr>
                 <tr> <td class='nonselectable'>3:15-4pm</td><td colspan='2' class=yoga>Yoga for Tango (Prince George's Room)</td></tr>
                 <tr> <td class='nonselectable'>4-5:30pm</td><td class=alice>Developing a Floating Walk<br />(Colony Ballroom)</td><td class=aqua>Uncovering the Magic: Exploration of <br />Musicality<br />(Prince George's Room)</td></tr>
@@ -66,7 +66,7 @@ If a class is currently full it will be grayed out and will not be selectable, p
             <div class='divider'></div>
             <table class="center" border="1">
                 <tr> <th width=8%>Day</th> <th width=12%>Time</th><th width=40%>Daniela & Luis</th><th width=40%>Juan & Sol</th></tr>
-                <tr> <td rowspan='5' class='nonselectable'><h3>Sun <br /> 19 April</h3></td> <td class='nonselectable'>12-1:30pm</td> <td class='aqua'>The Silky Embrace: Effortless and Sensitive Connection<br />(Prince George's Room)</td><td class='alice'>Wax On Wax Off: Mastering Rotation<br />Within Your Own Space<br />(Atrium)</td></tr>
+                <tr> <td rowspan='5' class='nonselectable'><h3>Sun<br /> 17 April</h3></td> <td class='nonselectable'>12-1:30pm</td> <td class='aqua'>The Silky Embrace: Effortless and Sensitive Connection<br />(Prince George's Room)</td><td class='alice'>Wax On Wax Off: Mastering Rotation<br />Within Your Own Space<br />(Atrium)</td></tr>
                 <tr> <td class='nonselectable'>1:45-3:15pm</td> <td class='aqua'>Making Colgadas Effortless:<br />All Secrets of Colgada Technique<br />(Prince George's Room)</td><td class='alice'>Rapid Fire Footwork for Milonga<br />(Atrium)</td></tr>
                 <tr> <td class='nonselectable'>3:15-4pm</td><td colspan='2' class=yoga>Yoga for Tango (Prince George's Room)</td></tr>
                 <tr> <td class='nonselectable'>4-5:30pm</td> <td class='aqua'>Ganchos and Wraps<br />(Prince George's Room)</td><td class='alice'>Finding Your Power: Solo and Partner<br />Techniques<br />(Atrium)</td></tr>
