@@ -2,6 +2,7 @@ var selectedItems = [];
 var passtype_v = "";
 $(document).ready(function(){
     passtype_v = $(".ticket_type").html();
+    var passtype = "";
 
     // AJAX - Closed classes
     $.ajax({
@@ -76,7 +77,8 @@ $(document).ready(function(){
                 success: function(data) {
                     console.log(data);
                     var response = JSON.parse(data);
-                    $("#status").html("Selected options: <br /><span class='red_text'>" + response[0]) + "</span>";
+                    passtype = response[0];
+                    $("#status").html("Selected options: <br /><span class='red_text'>" + passtype) + "</span>";
                     $("#yourprice").html("Your price is:  <span class='red_text'>$<span id='numeric_price'>"
                                         + response[1] + ".00</span></span>");
                 }
@@ -88,6 +90,7 @@ $(document).ready(function(){
     $("#submit").click(function() {
         $("#class_string").val(JSON.stringify(selectedItems));
         $("#price").val($("#numeric_price").html());
+        $("#passtype").val(passtype);
     });
 }); //document.ready
 

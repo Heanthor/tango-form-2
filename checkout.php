@@ -20,6 +20,7 @@ Released   : 20130731
 
     // receive data
     $selected_classes = implode(",", json_decode($_POST['class_string']));
+    $passtype = $_POST['passtype'];
     $price = intval($_POST['price']);
     $tax = round(($price * 0.035) + 0.30, 2);
     $id = $_SESSION['submission_id'];
@@ -32,11 +33,11 @@ Released   : 20130731
     $connection = new SQLConnector($cred);
     $connection->connect();
 
-    $query = "INSERT INTO `classes` (`registerid`, `classes`, `price`)
-            VALUES ('$id', '$selected_classes', '$price');";
+    $query = "INSERT INTO `classes` (`registerid`, `classes`, `price`, `passtype`)
+            VALUES ('$id', '$selected_classes', '$price', '$passtype');";
 
     try {
-        $connection->insert($query);    
+        $connection->insert($query);
     } catch (Exception $e) {
         $error = $e->getMessage();
         header("Location: error.php?sql_error=$error");
@@ -86,20 +87,20 @@ Released   : 20130731
       <div class=paybutton>
           <p>Thank you for your selection. Your spots have been recorded.</p>
           <p>If you'd like to make changes to your schedule, please click <a href="registration.html">here</a> to restart the registration process. Do not attempt to return to the previous form.</p>
-          <p>If you are ready to proceed, click below to continue with your payment. Please note, your spot is not reserved until payment is complete.</p><br><br><script 
-               async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=terrapin.tango.festival@gmail.com" 
-    data-button="buynow" 
-    data-name="Terrapin Tango Festival Registration" 
-    data-amount="<?php echo $price ?>" 
-    data-shipping="0" 
-    data-tax="<?php echo $tax ?>" 
+          <p>If you are ready to proceed, click below to continue with your payment. Please note, your spot is not reserved until payment is complete.</p><br><br><script
+               async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=terrapin.tango.festival@gmail.com"
+    data-button="buynow"
+    data-name="Terrapin Tango Festival Registration"
+    data-amount="<?php echo $price ?>"
+    data-shipping="0"
+    data-tax="<?php echo $tax ?>"
     data-env=""
     data-callback="http://terrapintangofestival.elasticbeanstalk.com/ipn_listener.php?submission_id=<?php echo $id?>"
                     ></script></div>
     </div>
-    
 
-     
+
+
 <div id="copyright" class="container">
     <p>Copyright (c) 2006-2016 Argentine Tango Club. All rights reserved. | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
 </div>

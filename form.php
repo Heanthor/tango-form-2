@@ -39,6 +39,7 @@
                 <input type="submit" id='submit' name="submit" value="Submit schedule">
                 <input type="text" name="class_string" id="class_string" value="" hidden>
                 <input type="text" name="price" id="price" value="" hidden>
+                <input type="text" name="passtype" id="passtype" value="" hidden>
             </form>
             <div class='status_text'>
                   <span class='statustext'><span class='red_text'>Instructions</span><br /><span class='smalltext'>Select ALL workshops, yoga, and milongas you wish to attend. Your selections will be printed directly to your ticket.<br />The cheapest pass option and total price will be automatically displayed above.

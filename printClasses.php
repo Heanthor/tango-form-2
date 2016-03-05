@@ -10,7 +10,7 @@
     //echo drawTable($result);
 
     $new_list = array();
-    for ($i = 0; $i < 33; $i++) {
+    for ($i = 0; $i < 34; $i++) {
         if (in_array($i, array_keys($master_class_list))) {
             $lf = $master_class_list[$i];
 
