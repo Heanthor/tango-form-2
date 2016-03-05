@@ -19,7 +19,7 @@
                     31 => "Finding your power",
                     33 => "Shellebration milonga");
 
-    public function get_classname($index) {
+    function get_classname($index) {
         if (!in_array($index, array_keys($classes))) {
             return "INVALID INDEX";
         } else {
