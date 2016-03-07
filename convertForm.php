@@ -21,10 +21,12 @@
 
     function get_classname($index) {
         global $classes;
-        if (!in_array($index, array_keys($classes))) {
+        $int_index = intval($index);
+        
+        if (!in_array($int_index, array_keys($classes))) {
             return "INVALID INDEX";
         } else {
-            return $classes[$index];
+            return $classes[$int_index];
         }
     }
 ?>

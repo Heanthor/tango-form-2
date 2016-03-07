@@ -6,7 +6,7 @@
     require_once("closed.php");
     require_once("convertForm.php");
 
-    echo ("<h1>Class Status</h1>");
+    echo ("<h1>Class Balance Info</h1>");
     //echo drawTable($result);
 
     $new_list = array();

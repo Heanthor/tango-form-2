@@ -36,7 +36,7 @@
 
             foreach ($fields as $table) {
                 if ($table == "ConfirmedRegistrants") {
-                    $query = "SELECT r.fname, r.lname, r.partnerfname, r.email, c.classes, c.price
+                    $query = "SELECT r.fname, r.lname, r.partnerfname, r.email, c.classes, c.passtype, c.price
                                                         FROM records r, classes c, confirmation f
                                                         WHERE r.registerid = c.registerid and r.registerid = f.registerid and
                                                         f.payment_status = 'Completed'";
@@ -68,7 +68,9 @@
             $body .= "<p><form action='admin.php' method=POST><input type='submit' value='Back'></form></p>";
         } else if (isset($_POST['classprint'])) {
 			header("Location: printClasses.php");
-		} else {
+		} else if (isset($_POST['mapping'])) {
+			header("Location: personalClassInfo.php");
+        } else {
             $body =<<<BODY
                 <h1> Database Access </h1>
 
@@ -93,7 +95,10 @@
                         <input type='submit' name='arbsubmiti' value='Submit arbitrary query (Do not get response)'>
                     </p>
 					<p>
-						<input type='submit' name='classprint' value='Class information'>
+						<input type='submit' name='classprint' value='Class Balance info'>
+					</p>
+                    <p>
+						<input type='submit' name='mapping' value='Confirmed Schedules'>
 					</p>
                 </form>
 BODY;
