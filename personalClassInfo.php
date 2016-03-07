@@ -32,7 +32,8 @@
     echo "<h1>Class Mapping</h1>";
     foreach ($result as $record) {
         //print_r($record);
-        $c = sort(explode(",", $record['classes']));
+        $c = explode(",", $record['classes']);
+        sort($c);
         $translated_classes = array();
 
         // make classes into nice words
