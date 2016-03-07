@@ -27,7 +27,7 @@
     // END SQL
     $person_classes = array();
     $table = "<table border=\"1\">";
-    $table .= "<th>Name</th><th>Classes</th>";
+    $table .= "<th>Name</th><th>Pass Type</th><th>Classes</th>";
 
     echo "<h1>Class Mapping</h1>";
     foreach ($result as $record) {
@@ -40,15 +40,16 @@
         foreach ($c as $class) {
             array_push($translated_classes, get_classname($class));
         }
-        $person_classes[$record['fname']." ".$record['lname']] = $translated_classes;
+        $person_classes[$record['fname']." ".$record['lname']] = array($record['passtype'], $translated_classes);
         // print_r($translated_classes);
         // echo "<br>";
     }
 
     //print_r($person_classes);
     foreach ($person_classes as $person => $class_ary) {
-        $table .= "<tr><td>$person</td><td>";
-        $table .= implode(", ", $class_ary)."</td><tr>";
+        $table .= "<tr><td>$person</td>";
+        $table .= "<td>".$class_ary[0]."</td><td>";
+        $table .= implode(", ", $class_ary[1])."</td><tr>";
     }
 
     echo $table;
