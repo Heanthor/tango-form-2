@@ -27,7 +27,7 @@
     } else {
         // LATE PRICES
         $single_workshops = array(30, 60, 20, 40);
-        $friday_milongas = array(18, 36, 12.50, 25);
+        $friday_milongas = array(18, 36, 13, 26);
         $saturday_milongas = array(20, 40, 15, 30);
         $sunday_milongas = array(16, 32, 10, 20);
         $milonga_pass = array(48, 96, 32, 64);
@@ -35,7 +35,7 @@
         $saturday_pass = array(95, 170, 34, 68);
         $sunday_pass = array(90, 162, 30, 60);
         $yoga = array(12, 24, 7, 14);
-        $milonga_pass_discount = array(6, 12, 5.5, 11);
+        $milonga_pass_discount = array(6, 12, 6, 12);
         $full_pass = array(195, 350, 66, 132);
     }
     $all_prices = array("single_workshops" => $single_workshops,
