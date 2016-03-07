@@ -7,22 +7,37 @@
     $day1 = array("min" => 2, "max" => 3);
     $day2 = array("min" => 8, "max" => 17);
     $day3 = array("min" => 22, "max" => 31);
+    // price toggle
+    $early_registration = true;
 
     // all prices (general, partner (general), student, partner (student)
-    // EARLY PRICES
-
-    $single_workshops = array(27, 54, 18, 36);
-    $friday_milongas = array(16, 32, 10, 20);
-    $saturday_milongas = array(18, 36, 12, 24);
-    $sunday_milongas = array(15, 30, 8, 16);
-    $milonga_pass = array(45, 90, 25, 50);
-    $friday_pass = array(36, 66, 20, 40);
-    $saturday_pass = array(82, 148, 30, 60);
-    $sunday_pass = array(78, 140, 25, 50);
-    $yoga = array(10, 20, 5, 10);
-    $milonga_pass_discount = array(4, 8, 5, 10);
-    $full_pass = array(170, 310, 60, 120);
-
+    if ($early_registration) {
+        // EARLY PRICES
+        $single_workshops = array(27, 54, 18, 36);
+        $friday_milongas = array(16, 32, 10, 20);
+        $saturday_milongas = array(18, 36, 12, 24);
+        $sunday_milongas = array(15, 30, 8, 16);
+        $milonga_pass = array(45, 90, 25, 50);
+        $friday_pass = array(36, 66, 20, 40);
+        $saturday_pass = array(82, 148, 30, 60);
+        $sunday_pass = array(78, 140, 25, 50);
+        $yoga = array(10, 20, 5, 10);
+        $milonga_pass_discount = array(4, 8, 5, 10);
+        $full_pass = array(170, 310, 60, 120);
+    } else {
+        // LATE PRICES
+        $single_workshops = array(27, 54, 18, 36);
+        $friday_milongas = array(16, 32, 10, 20);
+        $saturday_milongas = array(18, 36, 12, 24);
+        $sunday_milongas = array(15, 30, 8, 16);
+        $milonga_pass = array(45, 90, 25, 50);
+        $friday_pass = array(36, 66, 20, 40);
+        $saturday_pass = array(82, 148, 30, 60);
+        $sunday_pass = array(78, 140, 25, 50);
+        $yoga = array(10, 20, 5, 10);
+        $milonga_pass_discount = array(4, 8, 5, 10);
+        $full_pass = array(170, 310, 60, 120);
+    }
     $all_prices = array("single_workshops" => $single_workshops,
 
                         "friday_milonga" => $friday_milongas,
