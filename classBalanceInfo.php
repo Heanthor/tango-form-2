@@ -4,7 +4,7 @@
     require_once("sqlconnector.php");
     require_once("fileEditor.php");
     require_once("closed.php");
-    require_once("convertForm.php");
+    require_once("classMapping.php");
 
     echo ("<h1>Class Balance Info</h1>");
     //echo drawTable($result);
@@ -20,10 +20,11 @@
     }
 
     $table = "<table border=\"1\">";
-    $table .= "<th>Class</th><th>Leaders</th><th>Followers</th><th>Balance (L - F)</th>";
+    $table .= "<th>Class</th><th>Leaders</th><th>Followers</th><th>Total</th><th>Balance (L - F)</th>";
     foreach ($new_list as $class => $status) {
         $table .= "<tr><td><strong>$class</strong></td>";
         $table .= "<td>".$status['LEADER']."</td><td>".$status['FOLLOWER']."</td>";
+        $table .= "<td>".($status['LEADER'] + $status["FOLLOWER"])."</td>";
         $table .= "<td>".($status['LEADER'] - $status["FOLLOWER"])."</td></tr>";
     }
 

@@ -1,5 +1,5 @@
 <?php
-    require_once("convertForm.php");
+    require_once("classMapping.php");
     require_once("dbLogin.php");
     require_once("sqlconnector.php");
     require_once("fileEditor.php");
