@@ -67,7 +67,7 @@
 
             $body .= "<p><form action='admin.php' method=POST><input type='submit' value='Back'></form></p>";
         } else if (isset($_POST['classprint'])) {
-			header("Location: printClasses.php");
+			header("Location: classBalanceInfo.php");
 		} else if (isset($_POST['mapping'])) {
 			header("Location: personalClassInfo.php");
         } else {
@@ -95,7 +95,7 @@
                         <input type='submit' name='arbsubmiti' value='Submit arbitrary query (Do not get response)'>
                     </p>
 					<p>
-						<input type='submit' name='classprint' value='Class Balance info'>
+						<input type='submit' name='classprint' value='Class Balance Info'>
 					</p>
                     <p>
 						<input type='submit' name='mapping' value='Confirmed Schedules'>
