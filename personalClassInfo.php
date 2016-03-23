@@ -33,10 +33,7 @@
     foreach ($result as $record) {
         //print_r($record);
         $c = explode(",", $record['classes']);
-<<<<<<< HEAD
-=======
         sort($c);
->>>>>>> f98fb1ac4ba282ebfa4455e96b8c0bd9a3823937
         $translated_classes = array();
 
         // make classes into nice words
