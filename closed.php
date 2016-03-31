@@ -63,11 +63,20 @@
         }
     }
 
+    /* TEMPORARY */
+    //$master_class_list[9]['FOLLOWER'] += 50;
+    //$master_class_list[11]['FOLLOWER'] += 50;
+    //$master_class_list[16]['FOLLOWER'] += 50;
+    //$master_class_list[22]['FOLLOWER'] += 50;
+    //$master_class_list[31]['FOLLOWER'] += 50;
+    /* TEMPORARY */
+
     $closed_status = array();
     // save into a better format
     $master_class_list = $master_class_list->getContainer();
     // evaluate if class is full from this user's perspective
     $user_type = $_SESSION['dancertype'];
+    $partner = $_SESSION['partner_pass'];
 
     foreach ($master_class_list as $class => $status) {
         $limit = -1;
@@ -85,16 +94,30 @@
 
         // close class if no more of user type are allowed
         if ($user_type == "LEADER") {
-            if ($status["LEADER"] == $limit) {
+            if ($status["LEADER"] >= $limit) {
                 array_push($closed_status, $class);
             }
         } else {
             // follower
-            if ($status["FOLLOWER"] == $limit) {
+            if ($status["FOLLOWER"] >= $limit) {
                 array_push($closed_status, $class);
             }
         }
+        
+        // Gender balance
+        if (!$partner && !(in_array($class, $milongas)) && !(in_array($class, $yogas))) {
+            if ($user_type == "LEADER") {
+                if ($status["LEADER"] - $status["FOLLOWER"] > 3) {
+                    array_push($closed_status, $class);
+                }
+            } else {
+                if ($status["LEADER"] - $status["FOLLOWER"] < -3) {
+                    array_push($closed_status, $class);
+                }
+            }
+        }
     }
+
 
     //print_r($master_class_list);
     echo(json_encode($closed_status));
