@@ -41,35 +41,28 @@
     if (isset($class_info['classes'])) {
         $class_info = array($class_info);
     }
-    
+
     $master_class_list = new Defaultdict(array("LEADER" => 0, "FOLLOWER" => 0)); // <3 from python
 
     // loop through entries
     //print_r($class_info);
     foreach ($class_info as $entry) {
         $split = explode(",", $entry['classes']);
-
-        if (!$entry['partnerfname']) {
-            // No partner
-            foreach($split as $class) {
-                $master_class_list[$class][$entry['dancertype']]++;
-            }
-        } else {
-            // Has partner
-            foreach($split as $class) {
-                $master_class_list[$class]['LEADER']++;
-                $master_class_list[$class]['FOLLOWER']++;
+        if (sizeof($split) > 1) { // empty class string
+            if (!$entry['partnerfname']) {
+                // No partner
+                foreach($split as $class) {
+                    $master_class_list[$class][$entry['dancertype']]++;
+                }
+            } else {
+                // Has partner
+                foreach($split as $class) {
+                    $master_class_list[$class]['LEADER']++;
+                    $master_class_list[$class]['FOLLOWER']++;
+                }
             }
         }
     }
-
-    /* TEMPORARY */
-    //$master_class_list[9]['FOLLOWER'] += 50;
-    //$master_class_list[11]['FOLLOWER'] += 50;
-    //$master_class_list[16]['FOLLOWER'] += 50;
-    //$master_class_list[22]['FOLLOWER'] += 50;
-    //$master_class_list[31]['FOLLOWER'] += 50;
-    /* TEMPORARY */
 
     $closed_status = array();
     // save into a better format
@@ -103,7 +96,7 @@
                 array_push($closed_status, $class);
             }
         }
-        
+
         // Gender balance
         if (!$partner && !(in_array($class, $milongas)) && !(in_array($class, $yogas))) {
             if ($user_type == "LEADER") {

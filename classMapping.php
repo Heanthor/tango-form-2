@@ -1,5 +1,5 @@
 <?php
-    $classes = array(2 => "Finding sacadas",
+    $xyz = array(2 => "Finding sacadas",
                     3 => "Float like a butterfly",
                     5 => "Shell Milonga",
                     8 => "Impossibly small turns",
@@ -17,16 +17,22 @@
                     28 => "Sunday Yoga",
                     30 => "Ganchos and wraps",
                     31 => "Finding your power",
-                    33 => "Shellebration milonga");
+                    33 => "Shellebration milonga",
+                    0 => "No class");
 
     function get_classname($index) {
-        global $classes;
+        global $xyz;
         $int_index = intval($index);
-        
-        if (!in_array($int_index, array_keys($classes))) {
+
+        if (!in_array($int_index, array_keys($xyz))) {
             return "INVALID INDEX";
         } else {
-            return $classes[$int_index];
+            return $xyz[$int_index];
         }
+    }
+
+    function get_classes() {
+        global $xyz;
+        return $xyz;
     }
 ?>

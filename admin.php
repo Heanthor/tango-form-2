@@ -3,6 +3,7 @@
     require_once("dbLogin.php");
     require_once("sqlconnector.php");
     require_once("fileEditor.php");
+    require_once("personalClassInfo.php");
 
     $fe = new FileEditor('login-info.txt');
     $credentials = $fe->readFile();
@@ -69,7 +70,9 @@
         } else if (isset($_POST['classprint'])) {
 			header("Location: classBalanceInfo.php");
 		} else if (isset($_POST['mapping'])) {
-			header("Location: personalClassInfo.php");
+			echo print_class_info();
+        }  else if (isset($_POST['edit'])) {
+			header("Location: editdb.php");
         } else {
             $body =<<<BODY
                 <h1> Database Access </h1>
@@ -99,6 +102,9 @@
 					</p>
                     <p>
 						<input type='submit' name='mapping' value='Confirmed Schedules'>
+					</p>
+                    <p>
+						<input type='submit' name='edit' value='Edit Classes'>
 					</p>
                 </form>
 BODY;
