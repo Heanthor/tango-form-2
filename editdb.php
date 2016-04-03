@@ -33,21 +33,29 @@ if (isset($_POST['submit2'])) {
     $class_string = $_POST['qstring'];
     $registerid = $_POST['registerid'];
     //echo "Class string".$class_string;
-    if (sizeof($class_string) > 1) {
+    if (strlen($class_string) > 1) {
         $class_ary = explode(",", $class_string);
     } else {
         $class_ary = array();
     }
     //echo "initial array";
     //print_r($class_ary);
+    // echo "classes to remove ";
     // print_r($classes_to_remove);
+    // echo "<br>classes to add ";
     // print_r($classes_to_add);
-    // print_r($class_string);
+    // echo "<br>class array starting ";
+    // print_r($class_ary);
 
     $class_ary = array_remove($classes_to_remove, $class_ary);
+    // echo "<br>array after removing ";
+    // print_r($class_ary);
     $class_ary = array_add($classes_to_add, $class_ary);
-
-    //print_r($class_ary);
+    // echo "<br>array after adding ";
+    // print_r($class_ary);
+    //
+    // echo "<br>class array final ";
+    // print_r($class_ary);
 
     if (sizeof($class_ary) > 1) {
         $new_class_str = implode(",", $class_ary);
@@ -59,7 +67,7 @@ if (isset($_POST['submit2'])) {
 
     $query = "UPDATE classes SET classes = '$new_class_str' WHERE registerid = $registerid;";
 
-    //echo $query;
+    // echo $query;
     try {
         $connector->insert($query);
     } catch (Exception $e) {
