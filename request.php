@@ -9,7 +9,8 @@
     $day3 = array("min" => 22, "max" => 31);
     // price toggle
     $early_registration = false;
-
+    $late_registration = false;
+    $lastminute_registration = true;
     // all prices (general, partner (general), student, partner (student)
     if ($early_registration) {
         // EARLY PRICES
@@ -24,7 +25,8 @@
         $yoga = array(10, 20, 5, 10);
         $milonga_pass_discount = array(4, 8, 5, 10);
         $full_pass = array(170, 310, 60, 120);
-    } else {
+    } 
+    elseif ($late_registration) {
         // LATE PRICES
         $single_workshops = array(30, 60, 20, 40);
         $friday_milongas = array(18, 36, 13, 26);
@@ -37,6 +39,20 @@
         $yoga = array(12, 24, 7, 14);
         $milonga_pass_discount = array(6, 12, 6, 12);
         $full_pass = array(195, 350, 66, 132);
+    }
+    elseif ($lastminute_registration){
+        // LAST MINUTE PRICING
+        $single_workshops = array(35, 66, 22, 44);
+        $friday_milongas = array(20, 40, 14, 28);
+        $saturday_milongas = array(22, 44, 17, 34);
+        $sunday_milongas = array(18, 36, 11, 22);
+        $milonga_pass = array(54, 108, 36, 72);
+        $friday_pass = array(46, 85, 24, 48);
+        $saturday_pass = array(105, 188, 38, 76);
+        $sunday_pass = array(95, 178, 33, 66);
+        $yoga = array(14, 28, 8, 16);
+        $milonga_pass_discount = array(6, 12, 6, 12);
+        $full_pass = array(210, 385, 72, 144);
     }
     $all_prices = array("single_workshops" => $single_workshops,
 
