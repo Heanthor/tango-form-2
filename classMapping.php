@@ -7,7 +7,7 @@
                     11 => "Rhythmic alteraciones",
                     12 => "Axis unhinged",
                     14 => "Saturday Yoga",
-                    16 => "Floating walk",
+                    16 => “Action and Reaction“,
                     17 => "Uncovering the magic: musicality",
                     19 => "Tersichore's milonga",
                     22 => "Silky embrace",

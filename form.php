@@ -61,7 +61,7 @@ If a class is currently full it will be grayed out and will not be selectable, p
                 <tr> <td rowspan='5' class='nonselectable'><h3>Sat<br /> 16 April</h3></td> <td class='nonselectable'>12-1:30pm</td> <td class=alice>Impossibly Small Turns: How to <br />Create Space Through the Embrace<br />(Colony Ballroom)</td><td class=aqua>The Dance Between the Beats: <br />Embellishments Hidden in Common Steps<br />(Prince George's Room)</td></tr>
                 <tr> <td class='nonselectable'>1:45-3:15pm</td> <td class=alice>Rhythmic Alteraciones for Vals <br />(Colony Ballroom)</td><td class=aqua>The Axis Unhinged: Comfy Volcadas<br />(Prince George's Room)</td></tr>
                 <tr> <td class='nonselectable'>3:15-4pm</td><td colspan='2' class=yoga>Yoga for Tango (Prince George's Room)</td></tr>
-                <tr> <td class='nonselectable'>4-5:30pm</td><td class=alice>Developing a Floating Walk<br />(Colony Ballroom)</td><td class=aqua>Uncovering the Magic: Exploration of <br />Musicality<br />(Prince George's Room)</td></tr>
+                <tr> <td class='nonselectable'>4-5:30pm</td><td class=alice>Action and Reaction:<br />Achieving Flawless Timing<br />with Your Partner<br />(Colony Ballroom)</td><td class=aqua>Uncovering the Magic: Exploration of <br />Musicality<br />(Prince George's Room)</td></tr>
                 <tr> <td class='nonselectable'>9pm-2am</td><td colspan='2'><h2>TERPSICHORE'S<br />GRAND MILONGA*</h2><br /><span class='location'>Colony Ballroom</span></td></tr>
             </table>
             <div class='divider'></div>
