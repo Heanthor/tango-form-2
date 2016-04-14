@@ -85,6 +85,13 @@
             $limit = $class_limit;
         }
 
+        // partner only
+        if ($partner) {
+            if ($status["LEADER"] >= $limit ||
+                $status["FOLLOWER"] >= $limit) {
+                array_push($closed_status, $class);
+            }
+        }
         // close class if no more of user type are allowed
         if ($user_type == "LEADER") {
             if ($status["LEADER"] >= $limit) {
